@@ -1,0 +1,16 @@
+{
+  "name": "ksakit",
+  "version": "0.1.0",
+  "description": "Developer utilities built for Saudi applications — Arabic numbers, Saudi phone, IBAN, VAT, currency, and Arabic text normalization.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types":"./dist/index.d.ts","import":"./dist/index.js"}},
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {"build":"tsup src/index.ts --format esm --dts --clean","test":"vitest run","test:watch":"vitest","typecheck":"tsc --noEmit","prepublishOnly":"npm run typecheck && npm test && npm run build"},
+  "keywords": ["saudi","ksa","arabic","phone","iban","vat","sar","typescript","validation"],
+  "license": "MIT",
+  "engines": {"node": ">=18"},
+  "devDependencies": {"tsup":"^8.3.5","typescript":"^5.7.2","vitest":"^2.1.8"}
+}
